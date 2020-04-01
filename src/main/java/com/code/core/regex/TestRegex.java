@@ -12,6 +12,9 @@ import java.util.regex.Pattern;
  */
 public class TestRegex {
 
+    /**
+     * 去除标点符号
+     */
     @Test
     public void test4() {
         String s = "If you are _______ something，you may say, “It’s cool.”";
@@ -19,18 +22,16 @@ public class TestRegex {
         System.out.println(s.replaceAll("[\\pP\\p{Punct}]\\s", " "));
         System.out.println(s.replaceAll("\\s[\\pP\\p{Punct}]", " "));
         System.out.println(s.replaceAll("(\\s[\\pP\\p{Punct}])|([\\pP\\p{Punct}]\\s)", " "));
-//        System.out.println(s.replaceAll("[^a-zA-Z][\\pP\\p{Punct}][^a-zA-Z] | [\\pP\\p{Punct}]", ""));
-//        System.out.println(s.replaceAll("[\\pP\\p{Punct}][\b]", ""));
-//        System.out.println(s.replaceAll("[\\pP\\p{Punct}/b]", ""));
-//        System.out.println(s.replaceAll("[\\pP\\p{Punct}\b]", ""));
-//        System.out.println(s.replaceAll("[\\pP\\p{Punct}]/b", ""));
-//        System.out.println(s.replaceAll("[\\pP\\p{Punct}]\b", ""));
-//        System.out.println(s.replaceAll("[\\pP\\p{Punct}/B]", ""));
-//        System.out.println(s.replaceAll("[\\pP\\p{Punct}]/B", ""));
-//        System.out.println(s.replaceAll("[\\pP\\p{Punct}\\\\B]", ""));
-//        System.out.println(s.replaceAll("[\\pP\\p{Punct}]\\\\B", ""));
-
-
+        System.out.println(s.replaceAll("[^a-zA-Z][\\pP\\p{Punct}][^a-zA-Z] | [\\pP\\p{Punct}]", ""));
+        System.out.println(s.replaceAll("[\\pP\\p{Punct}][\b]", ""));
+        System.out.println(s.replaceAll("[\\pP\\p{Punct}/b]", ""));
+        System.out.println(s.replaceAll("[\\pP\\p{Punct}\b]", ""));
+        System.out.println(s.replaceAll("[\\pP\\p{Punct}]/b", ""));
+        System.out.println(s.replaceAll("[\\pP\\p{Punct}]\b", ""));
+        System.out.println(s.replaceAll("[\\pP\\p{Punct}/B]", ""));
+        System.out.println(s.replaceAll("[\\pP\\p{Punct}]/B", ""));
+        System.out.println(s.replaceAll("[\\pP\\p{Punct}\\\\B]", ""));
+        System.out.println(s.replaceAll("[\\pP\\p{Punct}]\\\\B", ""));
     }
 
     @Test
