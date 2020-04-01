@@ -23,7 +23,7 @@ public class ExportPdfutil {
      *
      * @param srcPath  html路径,可以是硬盘上的路径,也可以是网络路径
      * @param destPath pdf保存路径
-     * @return转换成功返回true
+     * @return 转换成功返回true
      */
     public static boolean convertwin(String srcPath, String destPath, String type) {
         final String propertyName = "os.name";
