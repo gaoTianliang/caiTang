@@ -1,6 +1,6 @@
 package com.code.core.base.core;
 
-import com.code.net.pojo.entity.TestStreamModel;
+import lombok.Data;
 import org.junit.Test;
 
 import java.util.ArrayList;
@@ -265,4 +265,13 @@ public class StreamTest {
             }
         }
     }
+}
+
+@Data
+class TestStreamModel{
+    private int id;
+    private String name;
+    private int grade;
+    private int classes;
+    private double score;
 }
