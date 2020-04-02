@@ -62,6 +62,7 @@ public class CookieUtils {
 		}
 		response.addCookie(cookie);
 	}
+
 	
 	/**
 	 * 获得指定Cookie的值
@@ -71,6 +72,7 @@ public class CookieUtils {
 	public static String getCookie(HttpServletRequest request, String name) {
 		return getCookie(request, null, name, false);
 	}
+
 	/**
 	 * 获得指定Cookie的值，并删除。
 	 * @param name 名称
@@ -79,6 +81,7 @@ public class CookieUtils {
 	public static String getCookie(HttpServletRequest request, HttpServletResponse response, String name) {
 		return getCookie(request, response, name, true);
 	}
+
 	/**
 	 * 获得指定Cookie的值
 	 * @param request 请求对象
