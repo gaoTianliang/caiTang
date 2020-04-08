@@ -10,14 +10,10 @@ import org.slf4j.LoggerFactory;
 import java.util.ArrayList;
 import java.util.List;
 
-/**
- * 模板的读取类
- */
 //@Component   不能让spring管理，不可以加这个注解
 public class QdpxListener extends AnalysisEventListener<QdpxDTO> {
 
     private static final Logger LOGGER = LoggerFactory.getLogger(QdpxListener.class);
-
 
     /**
      * 每隔5条存储数据库，实际使用中可以3000条，然后清理list ，方便内存回收
