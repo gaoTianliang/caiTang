@@ -4,7 +4,7 @@ server:
     context-path: /springBoot
 spring:
   redis:
-    host: 47.93.31.175
+    host: 127.0.0.1
     port: 6379
     jedis:
       pool:
