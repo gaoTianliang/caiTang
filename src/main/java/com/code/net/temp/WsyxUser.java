@@ -50,4 +50,5 @@ public class WsyxUser implements Serializable {
     private Date updateDate;
     @ApiModelProperty("删除标记（1：正常；0：删除）")
     private String delFlag;
+
 }
