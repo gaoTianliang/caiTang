@@ -1,4 +1,4 @@
-package com.code.net.temp;
+package com.code.net.util;
 
 import java.io.BufferedReader;
 import java.io.IOException;
@@ -9,7 +9,7 @@ import java.net.URLConnection;
 import java.util.List;
 import java.util.Map;
 
-public class HttpRequest {
+public class HttpRequestUtils {
     /**
      * 向指定URL发送GET方法的请求
      *
@@ -121,11 +121,11 @@ public class HttpRequest {
 
     public static void main(String[] args) {
         //发送 GET 请求
-//        String s = HttpRequest.sendGet(Constants.sampleURL, "eventDate=2016-07-21");
+//        String s = HttpRequestUtils.sendGet(Constants.sampleURL, "eventDate=2016-07-21");
 //        System.out.println(s);
 
         //发送 POST 请求
-//        String sr=HttpRequest.sendPost(Constants.sampleURL+"?eventDate=2016-07-21", "");
+//        String sr=HttpRequestUtils.sendPost(Constants.sampleURL+"?eventDate=2016-07-21", "");
 //        System.out.println(sr);
     }
 }

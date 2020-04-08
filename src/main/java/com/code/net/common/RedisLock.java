@@ -1,4 +1,4 @@
-package com.code.net.temp;
+package com.code.net.common;
 
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.data.redis.core.RedisCallback;
@@ -10,20 +10,10 @@ import java.util.Objects;
 @Component
 public class RedisLock {
 
-
-    /**
-     * Description: 通用Redis帮助类
-     * User: zhouzhou
-     * Date: 2018-09-05
-     * Time: 15:39
-     */
-
-
     public static final int LOCK_EXPIRE = Constants.REDIS_LOCK_TIME; // ms
 
     @Autowired
     RedisTemplate redisTemplate;
-
 
     /**
      * 最终加强分布式锁
@@ -70,5 +60,4 @@ public class RedisLock {
     public void delete(String key) {
         redisTemplate.delete(key);
     }
-
 }

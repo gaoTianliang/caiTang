@@ -1,4 +1,4 @@
-package com.code.net.temp;
+package com.code.net.pojo.vo;
 
 import com.fasterxml.jackson.annotation.JsonFormat;
 import io.swagger.annotations.ApiModel;
@@ -10,7 +10,7 @@ import java.util.Date;
 
 @ApiModel("用户")
 @Data
-public class WsyxUser implements Serializable {
+public class WsyxUserVO implements Serializable {
 
     @ApiModelProperty("编号")
     private String id;

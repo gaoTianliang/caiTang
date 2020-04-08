@@ -1,4 +1,4 @@
-package com.code.net.temp;
+package com.code.net.pojo.dto;
 
 import io.swagger.annotations.ApiModelProperty;
 import lombok.Getter;

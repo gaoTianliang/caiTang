@@ -1,4 +1,4 @@
-package com.code.net.temp;
+package com.code.net.common;
 
 public class Constants {
     //默认分页每页的数量

@@ -1,8 +1,13 @@
-package com.code.net.temp;
+package com.code.net.controller;
 
 import com.alibaba.fastjson.JSONObject;
+import com.code.net.common.Constants;
+import com.code.net.common.RedisLock;
 import com.code.net.common.RedisService;
+import com.code.net.pojo.dto.LoginDTO;
+import com.code.net.pojo.vo.WsyxUserVO;
 import com.code.net.util.CookieUtils;
+import com.code.net.util.HttpRequestUtils;
 import com.code.net.util.JwtHelper;
 import com.google.common.collect.Maps;
 import org.apache.commons.lang3.StringUtils;
@@ -20,7 +25,7 @@ import java.util.concurrent.TimeUnit;
  * @version 1.0
  * @date 2019/11/19 15:51
  */
-public class WxLogin {
+public class WxLoginController {
 
     @Value("${wx.appId}")
     private String appId;
@@ -38,7 +43,7 @@ public class WxLogin {
         JSONObject json = JSONObject.parseObject(wxLoginUrlConfig);
         String wxLoginUrl = json.get("wx_login_url").toString();
         String param = "appid=" + appId + "&secret=" + userAppSecret + "&js_code=" + loginDTO.getCode() + "&grant_type=authorization_code";
-        String loginResult = HttpRequest.sendGet(wxLoginUrl, param);
+        String loginResult = HttpRequestUtils.sendGet(wxLoginUrl, param);
         if (StringUtils.isNotBlank(loginResult)) {
             JSONObject loginJson = JSONObject.parseObject(loginResult);
             if (!StringUtils.equals(loginJson.getString("errcode"), "40029")
@@ -46,7 +51,7 @@ public class WxLogin {
                     && !StringUtils.equals(loginJson.getString("errcode"), "-1")) {
                 String userId = "";
                 //微信授权成功
-                WsyxUser user = new WsyxUser();
+                WsyxUserVO user = new WsyxUserVO();
                 user.setOpenid(loginJson.getString("openid"));
                 if (StringUtils.isNotBlank(loginJson.getString("unionid"))) {
                     user.setUnid(loginJson.getString("unionid"));
