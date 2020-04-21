@@ -19,6 +19,18 @@ public class RedisService {
     private RedisTemplate redisTemplate;
 
     /**
+     * 递增
+     * @param key 键
+     * @return
+     */
+    public long incr(String key, long delta){
+        if(delta<0){
+            throw new RuntimeException("递增因子必须大于0");
+        }
+        return redisTemplate.opsForValue().increment(key, delta);
+    }
+
+    /**
      * 写入缓存
      */
     public boolean set(final String key, Object value) {
