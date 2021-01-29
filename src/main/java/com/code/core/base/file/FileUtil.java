@@ -253,6 +253,7 @@ public class FileUtil {
             PDDocument document = PDDocument.load(new File(filePath));
             PDDocumentInformation pdDocumentInformation = new PDDocumentInformation();
             pdDocumentInformation.setAuthor("aaaa");
+            pdDocumentInformation.setTitle("title");
             pdDocumentInformation.setCustomMetadataValue("paperId", IdGen.uuid());
             document.setDocumentInformation(pdDocumentInformation);
             document.save(filePath);
