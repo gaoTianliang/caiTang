@@ -8,33 +8,42 @@ import java.io.ObjectOutputStream;
 import java.io.Serializable;
 
 @Data
-public class User implements Serializable {
+public class User extends UserParent implements Serializable {
     private String id;
     private String name;
     private int age;
     private String itemId;
 
+    private void readObjectNoData() {
+        System.out.println("============readObjectNoData=============");
+    }
+
+
     private Object writeReplace() {
+        System.out.println("============writeReplace================");
         return this;
     }
 
     private void writeObject(ObjectOutputStream objectOutputStream) throws IOException {
-        System.out.println("============write================");
+        System.out.println("============writeObject================");
         objectOutputStream.writeObject(this.id);
         objectOutputStream.writeObject(this.name);
-        objectOutputStream.writeInt(this.age);
+        //可以指定规则
+        objectOutputStream.writeInt(this.age + 1);
         objectOutputStream.writeObject(this.itemId);
     }
 
     private void readObject(ObjectInputStream objectInputStream) throws IOException, ClassNotFoundException {
-        System.out.println("============read================");
+        System.out.println("============readObject================");
         this.id = (String) objectInputStream.readObject();
         this.name = (String) objectInputStream.readObject();
-        this.age = objectInputStream.readInt();
+        //按照写的方法
+        this.age = objectInputStream.readInt() - 1;
         this.itemId = (String) objectInputStream.readObject();
     }
 
     private Object readResolve() {
+        System.out.println("============readResolve================");
         return this;
     }
 

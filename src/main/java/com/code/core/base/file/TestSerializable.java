@@ -6,7 +6,7 @@ public class TestSerializable {
 
     public static void main(String[] args) throws Exception {
         TestSerializable testSerializable = new TestSerializable();
-        testSerializable.write(testSerializable);
+//        testSerializable.write(testSerializable);
         System.out.println("=============================");
         testSerializable.read();
     }
@@ -17,7 +17,7 @@ public class TestSerializable {
         ObjectInputStream objectInputStream = new ObjectInputStream(fileInputStream);
         Object o = objectInputStream.readObject();
         User o1 = (User) o;
-        System.out.println(o1);
+//        System.out.println(o1.getParent());
     }
 
     public void write(TestSerializable testSerializable) throws Exception {
