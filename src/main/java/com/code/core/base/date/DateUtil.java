@@ -1,14 +1,21 @@
 package com.code.core.base.date;
 
+import com.fasterxml.jackson.annotation.JsonFormat;
 import com.google.common.collect.Maps;
 import org.apache.commons.lang3.time.DateFormatUtils;
 import org.apache.commons.lang3.time.DateUtils;
+import org.springframework.format.annotation.DateTimeFormat;
 
 import java.text.ParseException;
 import java.text.SimpleDateFormat;
 import java.util.*;
 
 public class DateUtil {
+
+    @DateTimeFormat(pattern = "yyyy-MM-dd")//入参格式化
+    @JsonFormat(pattern = "yyyy-MM-dd", timezone = "GMT+8")
+    private Date date;
+
     public static void main(String[] args) {
         Date now = new Date();
         //获得当前时间之前的5天
