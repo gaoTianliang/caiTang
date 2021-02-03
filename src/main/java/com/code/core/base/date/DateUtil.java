@@ -18,14 +18,13 @@ public class DateUtil {
 
     public static void main(String[] args) {
         Date now = new Date();
+        System.out.println("===============DateUtils==================");
         //获得当前时间之前的5天
         Date date = DateUtils.addDays(now, -5);
+        System.out.println("===============DateFormatUtils==================");
         //格式化为String
         String format = DateFormatUtils.format(date, "yyyy-MM-dd HH:mm:ss");
-
-
         System.out.println(format);
-
     }
 
     /**
